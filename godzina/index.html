@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tagi dla responsywnego designu -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tytuł strony internetowej -->
+    <title>Gzbod.pl</title>
+    <!-- Favicon dla strony -->
+    <link rel="icon" href="../assets/Ant.webp" type="image/webp">
+    <!-- Preconnect do Google Fonts dla lepszej wydajności ładowania -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Stylowanie dla strony internetowej -->
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            cursor: default;
+        }
+
+        /* Stylowanie dla klasy 'godziny' */
+        .godziny {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10%;
+        }
+
+        /* Stylowanie dla poszczególnych elementów 'span' wewnątrz klasy 'godziny' */
+        .godziny span {
+            transition: color 0.3s ease; 
+        }
+
+        /* Efekt hover dla poszczególnych elementów 'span' */
+        .godziny span:hover {
+            color: red;
+        }
+        .stopka {
+            margin-top: 10%;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Kontener dla wyświetlania przedziałów czasowych -->
+    <div class="godziny">
+        <!-- Miejsce na aktualną datę i czas -->
+        <h1 class="aktualnadata"></h1>
+        <!-- Przedziały czasowe z poszczególnymi elementami 'span' dla każdej cyfry -->
+        <span>0</span><span>8</span>:<span>0</span><span>0</span> - <span>0</span><span>8</span>:<span>4</span><span>5</span><br>
+        <span>0</span><span>8</span>:<span>5</span><span>0</span> - <span>0</span><span>9</span>:<span>3</span><span>5</span><br>
+        <span>0</span><span>9</span>:<span>4</span><span>5</span> - <span>1</span><span>0</span>:<span>3</span><span>0</span><br>
+        <span>1</span><span>0</span>:<span>4</span><span>0</span> - <span>1</span><span>1</span>:<span>2</span><span>5</span><br>
+        <span>1</span><span>1</span>:<span>3</span><span>5</span> - <span>1</span><span>2</span>:<span>2</span><span>0</span><br>
+        <span>1</span><span>2</span>:<span>3</span><span>0</span> - <span>1</span><span>3</span>:<span>1</span><span>5</span><br>
+        <span>1</span><span>3</span>:<span>2</span><span>5</span> - <span>1</span><span>4</span>:<span>1</span><span>0</span><br>
+        <span>1</span><span>4</span>:<span>1</span><span>5</span> - <span>1</span><span>5</span>:<span>0</span><span>0</span><br>
+        <span>1</span><span>5</span>:<span>0</span><span>5</span> - <span>1</span><span>5</span>:<span>5</span><span>0</span>
+    </div>
+    <div class="stopka">
+        <hr style="background-color: white; height: 1px; max-width: 20%; margin-top: 20%;">
+        <div>Made with <span style="margin-left: 2px;"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#f53232" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span><br><br>By:<br><br><span style="font-family: 'Bad Script', cursive;">Gzbod</span> & <span style="font-family: 'Bad Script', cursive;">Blue.dev</span></div> 
+    </div>
+</body>
+    <!-- Sekcja JavaScript -->
+    <script>
+        // Funkcja do aktualizacji wyświetlanej daty i czasu
+        function updateDate() {
+            // Tworzenie nowego obiektu daty, aby uzyskać aktualną datę i czas
+            var currentDate = new Date();
+
+            // Wyodrębnianie poszczególnych składników daty i czasu
+            var day = currentDate.getDate();
+            var month = currentDate.getMonth() + 1;
+            var year = currentDate.getFullYear();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+
+            // Formatowanie daty i czasu do czytelnej formy
+            month = month < 10 ? '0' + month : month;
+            day = day < 10 ? '0' + day : day;
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Konstruowanie ciągu znaków dla aktualnej daty i czasu
+            var currentDateTime = day + '/' + month + '/' + year + ' ' + hours + ':' + minutes + ':' + seconds;
+
+            // Aktualizacja zawartości elementu 'aktualnadata'
+            document.querySelector('.aktualnadata').textContent = currentDateTime;
+        }
+
+        // Ustawianie interwału do regularnej aktualizacji daty i czasu
+        setInterval(updateDate, 1000);
+
+        // Wywoływanie funkcji updateDate przy załadowaniu strony
+        window.onload = updateDate;
+
+        // Nasłuchiwanie zdarzeń na najechanie myszką na poszczególne elementy 'span'
+        var spans = document.querySelectorAll('.godziny span');
+        spans.forEach(function (span) {
+            span.addEventListener('mouseover', function () {
+                this.style.color = 'red';
+                // Resetowanie koloru po 1 sekundzie
+                setTimeout(function () {
+                    span.style.color = '';
+                }, 1000); 
+            });
+        });
+    </script>
+
+</html>
