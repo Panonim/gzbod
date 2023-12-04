@@ -26,6 +26,3 @@ function showButtons() {
       showButtons(); 
     }, 500);
   }
-  function swayfyMarketing() {
-    window.location.href = 'https://discord.gg/bJcHWru8kZ';
-  }

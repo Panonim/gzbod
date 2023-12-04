@@ -1,2 +1,0 @@
-# gzbod
-Gzbod official website

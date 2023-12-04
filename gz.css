@@ -14,7 +14,7 @@ body  {
     width: 100%;
     height: 100%;
     z-index: 100;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -133,12 +133,6 @@ a {
 /* Mobile */
 
 
-@media (max-width: 350px) {
-  .welcomescreen{
-    display: none;
-  }
-  
-}
 @media (max-width: 600px) {
   .logo-gif {
     display: none;
