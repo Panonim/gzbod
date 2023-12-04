@@ -39,8 +39,8 @@ background: radial-gradient(circle farthest-corner at top center, #751A20 5%, #D
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  text-align: right;
-  margin-top: 20%;
+  text-align: center;
+  margin-top: 10%;
   z-index: 10;
 }
 .linktitle {
@@ -48,8 +48,12 @@ background: radial-gradient(circle farthest-corner at top center, #751A20 5%, #D
 background: radial-gradient(circle farthest-corner at top center, #751A20 5%, #DF2935 36%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
+text-align: right;
+margin-right: 15%;
 }
 .linkbutton {
+
+  margin-left: 20px;
   font-size: 18px;
   background-color: transparent;
   color: #fcfcfc;
@@ -156,8 +160,14 @@ a {
   .links {
     width: 100%;
     text-align: center !important;
+    
+  }
+  .linktitle {
+    margin-right: 0%;
+    text-align: center;
   }
 }
+
 
 /*Keyframes*/
 
