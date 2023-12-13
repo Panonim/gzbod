@@ -48,7 +48,7 @@ background: radial-gradient(circle farthest-corner at top center, #751A20 5%, #D
 background: radial-gradient(circle farthest-corner at top center, #751A20 5%, #DF2935 36%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-text-align: right;
+text-align: center;
 margin-right: 15%;
 }
 .linkbutton {
